@@ -21,16 +21,16 @@ const Header = () => {
         <nav className={`md:px-0 ${abierto ? 'block' : 'hidden'} md:block`}>
             <ul className="flex flex-col md:flex-row space-x-0 md:space-x-4">
                 <li>
-                    <a className='text-2xl font-semibold text-white hover:text-red-600 transition'>Inicio</a>
+                    <a className='text-2xl cursor-pointer font-semibold text-white hover:text-red-600 transition'>Inicio</a>
                 </li>
                 <li>
-                    <a className='text-2xl font-semibold text-white hover:text-red-600 transition'>Proyectos</a>
+                    <a className='text-2xl cursor-pointer font-semibold text-white hover:text-red-600 transition'>Proyectos</a>
                 </li>
                 <li>
-                    <a className='text-2xl font-semibold text-white hover:text-red-600 transition'>Servicios</a>
+                    <a className='text-2xl cursor-pointer font-semibold text-white hover:text-red-600 transition'>Servicios</a>
                 </li>
                 <li>
-                    <a className='text-2xl font-semibold text-white hover:text-red-600 transition uppercase lg:hidden'>Contacto</a>
+                    <a className='text-2xl cursor-pointer font-semibold text-white hover:text-red-600 transition uppercase lg:hidden'>Contacto</a>
                 </li>
             </ul>
         </nav>
