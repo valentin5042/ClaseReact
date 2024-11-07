@@ -1,5 +1,8 @@
 import Header from './ui/Header'
 import Inicio from './components/Inicio'
+import Mensaje from './ui/Mensaje'
+import Somos from './components/Somos'
+import Formulario from './components/Formulario'
 
 const App = () => {
   return (
@@ -8,6 +11,12 @@ const App = () => {
       <Header />
 
       <Inicio />
+
+      <Mensaje />
+
+      <Somos />
+
+      <Formulario /> 
     </div>
   )
 }
