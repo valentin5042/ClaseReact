@@ -1,6 +1,6 @@
+import PropTypes from "prop-types"
 
-
-const Somos = () => {
+const Somos = ( { abrirModal } ) => {
   return (
     <div className="flex flex-col items-center p-10">
         <div className="lg:flex lg:justify-around items-center w-full lg:w-8/12">
@@ -38,12 +38,19 @@ const Somos = () => {
                 <div className="flex flex-col lg:flex-row lg:justify-around w-full p-8 lg:p-0 mt-10">
                     <button className="text-red-700 text-xl py-3 w-full lg:w-5/12 border mb-8 lg:mb-0 bg-transparent rounded-lg border-red-700 hover:bg-red-800 hover:text-white transition">Ver portafolio</button>
                     
-                    <button className="text-white text-xl py-3 bg-red-700 hover:bg-red-800 transition w-full lg:w-5/12 rounded-lg">Contáctame</button>
+                    <button 
+                        onClick={ abrirModal }
+                        className="text-white text-xl py-3 bg-red-700 hover:bg-red-800 transition w-full lg:w-5/12 rounded-lg"
+                    >Contáctame</button>
                 </div>
             </div>
         </div>
     </div>
   )
+}
+
+Somos.propTypes = {
+    abrirModal: PropTypes.func.isRequired,
 }
 
 export default Somos

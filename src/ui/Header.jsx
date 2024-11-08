@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react'
 
-const Header = () => {
+const Header = ({ abrirModal }) => {
 
     const [ abierto, setAbierto ] = useState(false);
 
@@ -30,7 +31,10 @@ const Header = () => {
                     <a className='text-2xl cursor-pointer font-semibold text-white hover:text-red-600 transition'>Servicios</a>
                 </li>
                 <li>
-                    <a className='text-2xl cursor-pointer font-semibold text-white hover:text-red-600 transition uppercase lg:hidden'>Contacto</a>
+                    <button
+                        onClick={ abrirModal }
+                        className='text-2xl cursor-pointer font-semibold text-white hover:text-red-600 transition uppercase lg:hidden'
+                    >Contacto</button>
                 </li>
             </ul>
         </nav>
@@ -59,7 +63,10 @@ const Header = () => {
         <nav className="px-4 hidden md:block">
             <ul className="flex flex-row space-x-4">
                 <li>
-                    <button className='text-2xl bg-red-700 py-1 px-6 rounded-3xl font-semibold text-white hover:bg-red-800 transition'>Contacto</button>
+                    <button
+                        onClick={ abrirModal }
+                        className='text-2xl bg-red-700 py-1 px-6 rounded-3xl font-semibold text-white hover:bg-red-800 transition'
+                    >Contacto</button>
                 </li>
                 <li>
                     <a className=''>
@@ -86,6 +93,10 @@ const Header = () => {
 
     </header>
   )
+}
+
+Header.propTypes = {
+    abrirModal: PropTypes.func.isRequired,
 }
 
 

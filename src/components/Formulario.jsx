@@ -12,7 +12,7 @@ const Formulario = () => {
     })
 
     const enviarMensaje = () => {
-        console.log('formulario enviado')
+        console.log('formulario enviado');
     }
 
   return (
@@ -21,42 +21,41 @@ const Formulario = () => {
         <Formik
             initialValues={ { nombre: '', email: '', telefono: '', mensaje: '' } }
             validationSchema={ validacion }
-            onSubmit={ ( Values ) => {
+            onSubmit={ ( Values, { resetForm } ) => {
                 console.log('Formulario enviado', Values)
+                resetForm();
             } }
         >
 
         <Form 
-            style={{ border: '.2rem solid #144a82', color: '#144a82' }}
             className="p-10 w-full rounded-2xl mb-10"
         >
-            <h2 className="text-3xl mb-8" >Contáctanos para cotizar tu proyecto</h2>
+            <h2 className="text-3xl text-white mb-8" >Contáctanos para cotizar tu proyecto</h2>
             <div className="flex flex-col mt-4">
-                <label>Nombre o Empresa:</label>
+                <label className="text-white text-xl mb-1">Nombre o Empresa:</label>
                 <Field name="nombre" type="text" placeholder="Ingresa tu nombre" className="bg-gray-100 rounded-md w-full h-10 px-2" />
                 <ErrorMessage name="nombre" component="p" className="text-red-400" />
             </div>
             <div className="flex flex-col mt-4">
-                <label>Teléfono:</label>
+                <label className="text-white text-xl mb-1">Teléfono:</label>
                 <Field name="telefono" type="text" placeholder="Ingresa tu teléfono" className="bg-gray-100 rounded-md w-full h-10 px-2" />
                 <ErrorMessage name="telefono" component="p" className="text-red-400" />
             </div>
             <div className="flex flex-col mt-4">
-                <label>Email</label>
+                <label className="text-white text-xl mb-1">Email</label>
                 <Field name="email" type="text" placeholder="Ingresa tu email" className="bg-gray-100 rounded-md w-full h-10 px-2" />
                 <ErrorMessage name="email" component="p" className="text-red-400" />
             </div>
             <div className="flex flex-col mt-4">
-                <label>¿Cómo podemos ayudarte?</label>
+                <label className="text-white text-xl mb-1">¿Cómo podemos ayudarte?</label>
                 <Field as="textarea" name="mensaje" className="bg-gray-100 rounded-md w-full h-32 px-2"></Field>
                 <ErrorMessage name="mensaje" component="p" className="text-red-400" />
             </div>
 
             <div className="mt-14 text-center">
                 <button 
-                    type="submit"
-                    style={{ backgroundColor: '#144a82' }} 
-                    className="text-white text-xl py-3 w-full lg:w-8/12 border rounded-lg transition"
+                    type="submit" 
+                    className="bg-white hover:bg-gray-200 font-bold text-red-700 text-xl py-3 w-full lg:w-8/12 border rounded-lg transition"
                     onClick={ enviarMensaje }
                  >
                     Enviar
